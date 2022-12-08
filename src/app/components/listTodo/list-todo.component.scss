@@ -1,0 +1,39 @@
+tr {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+th {
+  background: gray;
+  color: #dc3545;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  margin: 30px 0;
+}
+.todoStatus {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+table {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.todoStatus {
+  margin: 30px 0;
+  border-radius: 20px;
+}
+
+ td {
+  margin: 30px 0;
+
+}
+ button {
+   border-radius: 35%;
+ }
+

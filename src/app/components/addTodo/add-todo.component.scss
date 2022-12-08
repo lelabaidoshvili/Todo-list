@@ -1,0 +1,35 @@
+p {
+  color: #dc3545;
+  font-style: italic;
+}
+.container {
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+
+}
+
+div {
+  margin: 20px;
+}
+
+input {
+  border-radius: 20px;
+}
+textarea {
+  padding: 50px;
+  border-radius: 20px;
+}
+select {
+  padding: 10px;
+  border-radius: 20px;
+}
+
+button {
+  border-radius: 20px;
+  margin-top: 40px;
+
+}
