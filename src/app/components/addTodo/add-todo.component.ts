@@ -5,6 +5,10 @@ import {Observable, Subscription} from "rxjs";
 import {IPerson} from "../../shared/interfasec/person.interface";
 import {TodoService} from "../../shared/services/todo.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import { TasksService} from "../../shared/services/tasks.service";
+ // import {DateService} from "../../shared/services/date.service";
+// /import {TodoStatus} from "../../shared/types/status";
+
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
@@ -16,7 +20,7 @@ export class AddTodoComponent implements OnInit, OnDestroy {
   form: FormGroup = new FormGroup({
     title: new FormControl('', Validators.required),
     description: new FormControl('',Validators.required,),
-    dueDate: new FormControl('', Validators.required),
+    // dueDate: new FormControl('', Validators.required),
     responsiblePersonId: new FormControl('', Validators.required),
   });
 
@@ -27,8 +31,10 @@ export class AddTodoComponent implements OnInit, OnDestroy {
   constructor(
     private personService: PersonService,
     private todoService: TodoService,
+    private tasksService: TasksService,
     private router: Router,
     private route: ActivatedRoute,
+    // private dateService: DateService
   ) {
   }
 
@@ -60,7 +66,12 @@ export class AddTodoComponent implements OnInit, OnDestroy {
   }
 
   submit() {
-    this.form.markAllAsTouched()
+     this.form.markAllAsTouched()
+    // const task = {
+    // date: this.dateService.date.value.format('DD-MM-YYYY'),
+    // arr: {}
+    // }
+
     if (this.form.invalid) return
     const {responsiblePersonId} = this.form.value
     let responsiblePerson: IPerson | undefined
@@ -84,6 +95,7 @@ export class AddTodoComponent implements OnInit, OnDestroy {
         .subscribe(() => {
           this.router.navigate(['/'])
         })
+
     }
 
     // function myValidator(formControl: FormControl ) {

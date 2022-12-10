@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TodoService} from "../../shared/services/todo.service";
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
   completed = 0
   inProgress =0
   constructor(
-    private TodoService: TodoService
+    private TodoService: TodoService,
+
   ) { }
 
   ngOnInit(): void {

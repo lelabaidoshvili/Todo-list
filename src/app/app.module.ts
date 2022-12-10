@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import {SharedModule} from "./data/shared.module";
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
 
   ],
   imports: [
@@ -20,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
