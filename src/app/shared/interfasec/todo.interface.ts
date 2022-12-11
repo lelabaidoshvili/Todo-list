@@ -7,9 +7,9 @@ export interface ITodo {
   id: string
   title: string
   description: string
-  status: TodoStatus
-   dueDate: Date
-   createdAt: Date
+  status?: TodoStatus
+   dueDate?: Date
+   createdAt?: Date
     updatedAt?: Date
     removedAt?: Date
    responsiblePerson?: IPerson

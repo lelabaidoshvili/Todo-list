@@ -3,7 +3,8 @@ import {ITodo} from "../../shared/interfasec/todo.interface";
 import {TodoService} from "../../shared/services/todo.service";
 import {DateService} from "../../shared/services/date.service";
 import * as moment from 'moment'
- // import {TasksService} from "../../shared/services/tasks.service";
+import {Task} from "../../shared/services/tasks.service";
+import {TasksService} from "../../shared/services/tasks.service";
 
 interface Day {
   value: moment.Moment
@@ -22,10 +23,12 @@ interface Week {
 export class ListTodoComponent implements OnInit {
   todos:ITodo[]= []
   calendar: Week[] =[]
+  tasks: Task[] =[]
+  task: Task
   constructor(
     private todoService: TodoService,
     public dateService: DateService,
-    // private tasksService: TasksService
+    private tasksService: TasksService
 
   ) { }
 
@@ -84,5 +87,11 @@ export class ListTodoComponent implements OnInit {
   select(day: moment.Moment) {
       this.dateService.changeDate(day)
   }
+  remove(task: Task) {
+    this.tasksService.remove(task).subscribe(()=> {
+      this.tasks = this.tasks.filter(t => t.id!== task.id)
+    }, err =>console.error(err))
+  }
+
 
 }

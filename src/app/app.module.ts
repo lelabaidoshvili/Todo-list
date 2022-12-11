@@ -10,9 +10,12 @@ import {HttpClientModule} from "@angular/common/http";
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
+
 
   ],
   imports: [
@@ -21,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

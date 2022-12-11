@@ -9,15 +9,7 @@
 
     </main>
     <table>
-<!--      <thead>-->
-<!--      <tr>Sun</tr>-->
-<!--      <tr>Mon</tr>-->
-<!--      <tr>Tue</tr>-->
-<!--      <tr>Wen</tr>-->
-<!--      <tr>Thu</tr>-->
-<!--      <tr>Fri</tr>-->
-<!--      <tr>Sat</tr>-->
-<!--      </thead>-->
+
       <tbody>
       <tr *ngFor="let week of calendar" class="tr">
         <td *ngFor="let day of week.days" [class.disabled]="day.disabled"
@@ -57,23 +49,25 @@
       complete: todo.status === 'completed'
       }"
       >
+        <div class="footer-body">
         <div class="body">
         <div class="todoStatus">Title------{{todo.id}}</div>
 
-        <td> Description------{{todo.title}}</td>
-        <td> User------{{todo?.responsiblePerson?.fullName}}</td>
+        <div> Description------{{todo.title}}</div>
+        <div> User------{{todo?.responsiblePerson?.fullName}}</div>
 
 <!--        <td>{{todo.createdAt | date:'dd.MM.yyyy'}}</td>-->
 
-        <td> Action-----{{todo.status}}</td>
+        <div> Action-----{{todo.status}}</div>
         </div>
 
-        <td>
-          <button class="btn btn-success" (click)="complete(todo.id)">Complete</button>
+        <div class="footer-body-btn">
+          <button class="btn btn-success"  (click)="complete(todo.id)">Complete</button>
           <button class="btn btn-primary" routerLink="/todo/edit/{{todo.id}}">Edit</button>
-          <button class="btn btn-danger" (click)="delete(todo.id)">Delete</button>
+          <button class="btn btn-danger" (click)="remove(task); delete(todo.id)">Delete</button>
+        </div>
+        </div>
 
-      </tr>
     </ng-container>
     </tbody>
   </table>

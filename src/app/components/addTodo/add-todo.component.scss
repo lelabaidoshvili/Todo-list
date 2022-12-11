@@ -33,3 +33,17 @@ button {
   margin-top: 40px;
 
 }
+span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 15px;
+}
+.tasks {
+  display: flex;
+  flex-direction: column;
+}
+.tasks-desc {
+  color: #666666;
+}

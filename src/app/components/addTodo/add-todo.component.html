@@ -40,4 +40,23 @@
       <button type="submit" class="btn btn-primary">{{todoId ? 'Update todo': 'Create todo'}}</button>
     </div>
   </form>
+  <footer>
+    <ul *ngIf="tasks.length; else noTasks">
+      <li class="task" *ngFor="let task of tasks; let i = index">
+          <span>
+            <strong>{{i+1}}</strong>
+            <strong>{{task.date}}</strong>
+           <div class="tasks">
+             <p class="tasks-desc">title:  {{task.arr.title}}</p>
+             <p class="tasks-desc">description:{{task.arr.description}}</p>
+           </div>
+
+        <button class="btn btn-primary" (click)="remove(task);delete(todoId)">Remove</button>
+            </span>
+      </li>
+    </ul>
+    <ng-template #noTasks>
+      <p class="text-center">NO TASKS YET...</p>
+    </ng-template>
+  </footer>
 </div>
