@@ -29,7 +29,7 @@ export class TasksService {
           return []
 
         }
-        return Object.keys(tasks).map(key=>({...tasks[key], id:key}))
+        return Object.keys(tasks).map((key: any)=>({...tasks[key], id:key}))
       }))
   }
 

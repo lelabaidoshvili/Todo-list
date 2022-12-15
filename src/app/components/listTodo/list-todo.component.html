@@ -28,6 +28,7 @@
       <button class="btn btn-primary" routerLink="/todo">Add</button>
     </div>
   </div>
+  <!-- @ts-ignore -->
   <div class="date">{{dateService.date | async | moment: 'DD. MM. YYYY'}}</div>
   <table class="table">
     <thead>

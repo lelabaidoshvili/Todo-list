@@ -24,7 +24,7 @@ export class ListTodoComponent implements OnInit {
   todos:ITodo[]= []
   calendar: Week[] =[]
   tasks: Task[] =[]
-  task: Task
+  task: any;
   constructor(
     private todoService: TodoService,
     public dateService: DateService,
@@ -74,7 +74,7 @@ export class ListTodoComponent implements OnInit {
       .subscribe(() => {
         this.getTodos()
       })
-  }
+  } 
   complete(id: string) {
     this.todoService.completeTodoById(id)
       .subscribe(() => {

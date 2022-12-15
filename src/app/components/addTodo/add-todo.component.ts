@@ -139,7 +139,7 @@ export class AddTodoComponent implements OnInit, OnDestroy {
       this.todos = res;
     });
   }
-  delete(id: string) {
+  delete(id: any) {
     this.todoService.deleteTodoById(id)
       .subscribe(() => {
         this.getTodos()
